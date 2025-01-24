@@ -67,7 +67,25 @@ const obtenerJoyasPorFiltro = async ({
   }
 };
 
+const prepararHeateos = (inventario) => {
+  const results = inventario
+    .map((m) => {
+      return {
+        name: m.nombre,
+        href: `/inventario/joyas/${m.id}`,
+      };
+    })
+    .slice(0.4);
+  const total = inventario.length;
+  const HATEOAS = {
+    total,
+    results,
+  };
+  return HATEOAS;
+};
+
 module.exports = {
   obtenerJoyas,
   obtenerJoyasPorFiltro,
+  prepararHeateos,
 };
