@@ -72,7 +72,7 @@ const prepararHeateos = (inventario) => {
     .map((m) => {
       return {
         name: m.nombre,
-        href: `/inventario/joyas/${m.id}`,
+        href: `/inventario/joya/${m.id}`,
       };
     })
     .slice(0.4);
